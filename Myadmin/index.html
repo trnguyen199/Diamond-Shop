@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ADMIN</title>
+</head>
+
+<body>
+    <div class="Adminpage">
+        <div class="container">
+            <div class="body">
+                <div class="admintext">
+                    <h1>Welcome To Admin</h1>
+                </div>
+                <nav>
+                    <div class="navbar">
+
+                        <ul>
+                            <li><a href="#">Quản Lí Doanh Mục</a></li>
+                            <li><a href="#">Quản Lí Sản Phẩm </a></li>
+                            <li><a href="#">Quản Lí Đơn Hàng </a></li>
+                            <li><a href="#">Doanh Thu</a></li>
+                            <li><a href="#">Liên Hệ</a></li>
+                            <li><a href="#">Tin Mới</a></li>
+                            <li><a href="#">Trở Về Trang Chủ</a></li>
+                            <li><a href="#"><i class="fs-1 fa-solid fa-bars"></i></a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="addproduct">
+                    <h2 class="fs-2">Thêm Sản Phẩm:</h2>
+                    <div class="boder-1">
+                        <form action="" method="#">
+                            <table>
+                                <!-- <thead>
+                                    <tr>
+                                        <th>Tiêu đề 1</th>
+                                        <th>Tiêu đề 2</th>
+                                    </tr>
+                                </thead> -->
+                                <tbody>
+                                    <tr>
+                                        <td>Tên Sản Phẩm</td>
+                                        <td><input type="text" placeholder="tên sp"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mã sản phẩm</td>
+                                        <td><input type="text" placeholder="mã sp"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hình ảnh</td>
+                                        <td><input type="file"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Giá</td>
+                                        <td><input type="text" placeholder="giá"></td>
+                                    </tr>
+                                    <tr class="fs-3">
+                                        <td>Nội Dung</td>
+                                        <td><input class="fs-4" type="text" placeholder="nội dung...."></td>
+                                    </tr>
+                                    <tr class="fs-3">
+                                        <td>Tóm Tắt</td>
+                                        <td><input class="fs-4" type="text" placeholder="tóm tắt..."></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Số Lượng</td>
+                                        <td><input type="text" placeholder="số lượng"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Danh mục</td>
+                                        <td><select id="doanhmuc" name="danhmuc">
+                                                <option value="#">Kim Cương 1</option>
+                                                <option value="#">Kim Cương</option>
+                                                <option value="#">Kim Cương 2</option>
+                                                <option value="#">Bạch Kim</option>
+                                            </select></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tình Trạng</td>
+                                        <td><select id="doanhmuc" name="danhmuc">
+                                                <option value="#">Còn</option>
+                                                <option value="#">Tạm Hết</option>
+                                                <option value="#">Chờ Hàng</option>
+                                                <option value="#">Giá LH</option>
+                                            </select></td>
+                                        </td>
+                                    </tr>
+                                    <tr class="full-width-row">
+                                        <td colspan="2">
+                                            <button type="submit">Thêm Sản Phẩm</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+                <div class="listproduct">
+                    <h2 class="fs-2">Liệt Kê Sản Phẩm:</h2>
+                    <div class="boder-2">
+                        <form action="">
+
+                            <body>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Tên Sản Phẩm</th>
+                                            <th>Mã Sản Phẩm</th>
+                                            <th>Hình Ảnh</th>
+                                            <th>Giá Sản Phẩm</th>
+                                            <th>Tóm Tắt</th>
+                                            <th>Số Lượng</th>
+                                            <th>Danh Mục</th>
+                                            <th>Tình Trạng</th>
+                                            <th>Quản Lí</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Table rows -->
+                                        <tr>
+                                            <td>Row 1, Col 1</td>
+                                            <td>Row 1, Col 2</td>
+                                            <td>Row 1, Col 3</td>
+                                            <td><img class="ig-1" src="" alt=""></td>
+                                            <td>Row 1, Col 5</td>
+                                            <td>Row 1, Col 6</td>
+                                            <td>Row 1, Col 7</td>
+                                            <td>Row 1, Col 8</td>
+                                            <td>Row 1, Col 9</td>
+                                            <td>
+                                                <ul>
+                                                    <li><a href="#">Xóa</a></li>
+                                                    <li>|</li>
+                                                    <li><a href="#">Sửa</a></li>
+
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Row 1, Col 1</td>
+                                            <td>Row 1, Col 2</td>
+                                            <td>Row 1, Col 3</td>
+                                            <td><img class="ig-1" src="" alt=""></td>
+                                            <td>Row 1, Col 5</td>
+                                            <td>Row 1, Col 6</td>
+                                            <td>Row 1, Col 7</td>
+                                            <td>Row 1, Col 8</td>
+                                            <td>Row 1, Col 9</td>
+                                            <td>
+                                                <ul>
+                                                    <li><a href="#">Xóa</a></li>
+                                                    <li>|</li>
+                                                    <li><a href="#">Sửa</a></li>
+
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Row 1, Col 1</td>
+                                            <td>Row 1, Col 2</td>
+                                            <td>Row 1, Col 3</td>
+                                            <td><img class="ig-1" src="" alt=""></td>
+                                            <td>Row 1, Col 5</td>
+                                            <td>Row 1, Col 6</td>
+                                            <td>Row 1, Col 7</td>
+                                            <td>Row 1, Col 8</td>
+                                            <td>Row 1, Col 9</td>
+                                            <td>
+                                                <ul>
+                                                    <li><a href="#">Xóa</a></li>
+                                                    <li>|</li>
+                                                    <li><a href="#">Sửa</a></li>
+
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Row 1, Col 1</td>
+                                            <td>Row 1, Col 2</td>
+                                            <td>Row 1, Col 3</td>
+                                            <td><img class="ig-1" src="" alt=""></td>
+                                            <td>Row 1, Col 5</td>
+                                            <td>Row 1, Col 6</td>
+                                            <td>Row 1, Col 7</td>
+                                            <td>Row 1, Col 8</td>
+                                            <td>Row 1, Col 9</td>
+                                            <td>
+                                                <ul>
+                                                    <li><a href="#">Xóa</a></li>
+                                                    <li>|</li>
+                                                    <li><a href="#">Sửa</a></li>
+
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Row 1, Col 1</td>
+                                            <td>Row 1, Col 2</td>
+                                            <td>Row 1, Col 3</td>
+                                            <td><img class="ig-1" src="" alt=""></td>
+                                            <td>Row 1, Col 5</td>
+                                            <td>Row 1, Col 6</td>
+                                            <td>Row 1, Col 7</td>
+                                            <td>Row 1, Col 8</td>
+                                            <td>Row 1, Col 9</td>
+                                            <td>
+                                                <ul>
+                                                    <li><a href="#">Xóa</a></li>
+                                                    <li>|</li>
+                                                    <li><a href="#">Sửa</a></li>
+
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Row 1, Col 1</td>
+                                            <td>Row 1, Col 2</td>
+                                            <td>Row 1, Col 3</td>
+                                            <td><img class="ig-1" src="" alt=""></td>
+                                            <td>Row 1, Col 5</td>
+                                            <td>Row 1, Col 6</td>
+                                            <td>Row 1, Col 7</td>
+                                            <td>Row 1, Col 8</td>
+                                            <td>Row 1, Col 9</td>
+                                            <td>
+                                                <ul>
+                                                    <li><a href="#">Xóa</a></li>
+                                                    <li>|</li>
+                                                    <li><a href="#">Sửa</a></li>
+
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Row 1, Col 1</td>
+                                            <td>Row 1, Col 2</td>
+                                            <td>Row 1, Col 3</td>
+                                            <td><img class="ig-1" src="" alt=""></td>
+                                            <td>Row 1, Col 5</td>
+                                            <td>Row 1, Col 6</td>
+                                            <td>Row 1, Col 7</td>
+                                            <td>Row 1, Col 8</td>
+                                            <td>Row 1, Col 9</td>
+                                            <td>
+                                                <ul>
+                                                    <li><a href="#">Xóa</a></li>
+                                                    <li>|</li>
+                                                    <li><a href="#">Sửa</a></li>
+
+                                                </ul>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
