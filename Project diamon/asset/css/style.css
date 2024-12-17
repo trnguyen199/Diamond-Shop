@@ -20,12 +20,13 @@
   a:hover{
     text-decoration: underline;
   }
-/* ===================Signin/up============== */
+
 .container {
     width: 1170px;
     max-width: calc(100% - 48px);
     margin: 0 auto;
   }
+  /* ===================Sign in============== */
 .signin-signup{
     width: 100%;
     height: 100vh;
@@ -66,7 +67,7 @@
 .signin-signup__img:hover{
 border-radius: 10px;
 }
-.signin-signup__main{
+.signin__main{
     border: 2px solid rgba(105, 93, 93, 0.767);
     width: 400px;
     height: 350px;
@@ -76,10 +77,12 @@ border-radius: 10px;
     align-items: center;
 
 }
-.signin-signup__body{
+
+.signin__body{
     width: 350px;
     height: 205px;
 }
+
 .signin-signup__password{
     padding-top: 20px;
 }
@@ -87,7 +90,7 @@ border-radius: 10px;
     color:#479ff1;
     font-weight: 500;
 }
-.signin-signup__main #password,#username{
+.signin-signup__password #password,#username{
     border-radius: 5px;
     border: 3px solid gray;
     width: 100%;
@@ -95,10 +98,10 @@ border-radius: 10px;
     margin-top: 10px;
     transition: all 0.5s ease-out;
 }
-.signin-signup__main #username:hover{
+.signin-signup__userName #username:hover{
     background: rgb(212, 204, 204);
 
-}.signin-signup__main #password:hover{
+}.signin-signup__password #password:hover{
     background: rgb(212, 204, 204);
 }
 .signin-signup_submit{
@@ -135,4 +138,20 @@ border-radius: 10px;
 .signin-signup__button:hover{
     background: rgb(35, 118, 220);
     color: #cfcccc;
+}
+/* ===================Sign up============== */
+.signup__main{
+    border: 2px solid rgba(105, 93, 93, 0.767);
+    width: 400px;
+    height: 450px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.signup__body{
+    padding: 20px;
+    width: 350px;
+    height: 450px;
 }

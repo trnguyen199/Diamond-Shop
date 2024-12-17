@@ -12,7 +12,7 @@
     />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./asset/css/style.css" />
-    <title>Sign In | Your Website Name</title>
+    <title>Sign Up | Your Website Name</title>
   </head>
   <body>
     <div class="container">
@@ -30,23 +30,35 @@
               class="signin-signup__img"
             />
           </div>
-          <div class="signin__main">
-            <div class="signin__body">
+          <div class="signup__main">
+            <div class="signup__body">
               <!-- Form begins -->
               <form action="#" method="POST">
                 <!-- Username -->
                 <div class="signin-signup__userName">
-                  <label for="username">Username or Email Address</label>
+                  <label for="username">Username</label>
                   <br />
                   <input
                     type="text"
                     id="username"
                     name="username"
-                    placeholder="Enter your username or email"
-                    aria-label="Username or Email Address"
+                    placeholder="Enter your username "
+                    aria-label="Username"
                   />
                 </div>
                 <br />
+                <div class="signin-signup__userName">
+                  <label for="username">Email Address</label>
+                  <br />
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your email address "
+                    aria-label="Username"
+                  />
+                </div>
+                
                 <!-- Password -->
                 <div class="signin-signup__password">
                   <label for="password">Password</label>
@@ -59,7 +71,19 @@
                     aria-label="Password"
                   />
                 </div>
-                <br />
+                
+                <div class="signin-signup__password">
+                  <label for="password">Password</label>
+                  <br />
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password again"
+                    aria-label="Password"
+                  />
+                </div>
+                <br>
                 <!-- Remember me checkbox -->
                 <div class="signin-signup_submit">
                   <label for="checkbox">
@@ -70,7 +94,7 @@
                   </label>
                   <!-- Submit button -->
                 <button type="submit" class="signin-signup__button">
-                  Sign In
+                  Sign Up
                 </button>
                 </div>
               </form>
@@ -78,18 +102,12 @@
             </div>
             
             </div>
-            <!-- Sign Up -->
+            <!-- Go Home -->
             <div class="signin-sign__go-home">
-              <a href="./signup.html" class="signin-signup__link">
-                Sign Up
+              <a href="./signin.html" class="signin-signup__link">
+                Sign In
               </a>
             </div>
-            <!-- Forgot Password -->
-            <a href="#!" class="signin-signup__link" title="Click to reset your password">
-              Forgot your password?
-            </a>
-            
-            <!-- Go Home -->
             <div class="signin-sign__go-home">
               <a href="#!" class="signin-signup__link">
                 Go Home
