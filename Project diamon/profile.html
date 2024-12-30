@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Thông Tin Cá Nhân</title>
+    <!-- CSS rest -->
+    <link rel="stylesheet" href="./asset/css/rest.css">
+    <!-- Google Font -->
+    <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sora:wght@100..800&display=swap"
+    rel="stylesheet"
+  />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="./asset/css/style.css">
+</head>
+<body>
+    <div class="container-user">
+        <h1 class="header-user">Quản Lý Thông Tin Cá Nhân</h1>
+
+        <!-- Thông tin cá nhân -->
+        <div class="section-user">
+            <h2 class="section-user__title">Thông Tin Cá Nhân</h2>
+            <div class="form__group">
+                <label class="form__label" for="fullName">Họ và Tên:</label>
+                <input class="form__input" type="text" id="fullName" value="Nguyễn Văn A">
+            </div>
+            <div class="form__group">
+                <label class="form__label" for="email">Email:</label>
+                <input class="form__input" type="email" id="email" value="example@email.com">
+            </div>
+            <div class="form__group">
+                <label class="form__label" for="phone">Số Điện Thoại:</label>
+                <input class="form__input" type="text" id="phone" value="0123456789">
+            </div>
+            <div class="form__group">
+                <label class="form__label" for="address">Địa Chỉ:</label>
+                <textarea class="form__textarea" id="address">123 Đường ABC, Quận 1, TP. Hồ Chí Minh</textarea>
+            </div>
+            <div class="form__group">
+                <label class="form__label">Ảnh Đại Diện:</label>
+                <img class="form__avatar" src="./asset/img/ảnh_chó.jpg" alt="Avatar">
+                <button class="form__button">Thay Đổi Ảnh</button>
+            </div>
+            <button class="form__button">Lưu Thông Tin</button>
+        </div>
+
+        <!-- Quản lý mật khẩu -->
+        <div class="section-user">
+            <h2 class="section-user__title">Quản Lý Mật Khẩu</h2>
+            <div class="form__group">
+                <label class="form__label" for="currentPassword">Mật Khẩu Hiện Tại:</label>
+                <input class="form__input" type="password" id="currentPassword">
+            </div>
+            <div class="form__group">
+                <label class="form__label" for="newPassword">Mật Khẩu Mới:</label>
+                <input class="form__input" type="password" id="newPassword">
+            </div>
+            <div class="form__group">
+                <label class="form__label" for="confirmPassword">Xác Nhận Mật Khẩu Mới:</label>
+                <input class="form__input" type="password" id="confirmPassword">
+            </div>
+            <button class="form__button">Cập Nhật Mật Khẩu</button>
+        </div>
+</body>
+</html>
