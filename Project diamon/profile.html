@@ -1,66 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quản Lý Thông Tin Cá Nhân</title>
     <!-- CSS rest -->
-    <link rel="stylesheet" href="./asset/css/rest.css">
+    <link rel="stylesheet" href="./asset/css/rest.css" />
     <!-- Google Font -->
     <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sora:wght@100..800&display=swap"
-    rel="stylesheet"
-  />
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
     <!-- My CSS -->
-    <link rel="stylesheet" href="./asset/css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./asset/css/style.css" />
+  </head>
+  <body>
     <div class="container-user">
-        <h1 class="header-user">Quản Lý Thông Tin Cá Nhân</h1>
+      <h1 class="header-user">Quản Lý Thông Tin Cá Nhân</h1>
 
-        <!-- Thông tin cá nhân -->
-        <div class="section-user">
-            <h2 class="section-user__title">Thông Tin Cá Nhân</h2>
-            <div class="form__group">
-                <label class="form__label" for="fullName">Họ và Tên:</label>
-                <input class="form__input" type="text" id="fullName" value="Nguyễn Văn A">
-            </div>
-            <div class="form__group">
-                <label class="form__label" for="email">Email:</label>
-                <input class="form__input" type="email" id="email" value="example@email.com">
-            </div>
-            <div class="form__group">
-                <label class="form__label" for="phone">Số Điện Thoại:</label>
-                <input class="form__input" type="text" id="phone" value="0123456789">
-            </div>
-            <div class="form__group">
-                <label class="form__label" for="address">Địa Chỉ:</label>
-                <textarea class="form__textarea" id="address">123 Đường ABC, Quận 1, TP. Hồ Chí Minh</textarea>
-            </div>
-            <div class="form__group">
-                <label class="form__label">Ảnh Đại Diện:</label>
-                <img class="form__avatar" src="./asset/img/ảnh_chó.jpg" alt="Avatar">
-                <button class="form__button">Thay Đổi Ảnh</button>
-            </div>
-            <button class="form__button">Lưu Thông Tin</button>
+      <!-- Thông tin cá nhân -->
+      <div class="section-user">
+        <h2 class="section-user__title">Thông Tin Cá Nhân</h2>
+        <div class="form__group">
+          <label class="form__label" for="fullName">Họ và Tên:</label>
+          <input
+            class="form__input"
+            type="text"
+            id="fullName"
+            value="Nguyễn Văn A"
+          />
         </div>
+        <div class="form__group">
+          <label class="form__label" for="email">Email:</label>
+          <input
+            class="form__input"
+            type="email"
+            id="email"
+            value="example@email.com"
+          />
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="phone">Số Điện Thoại:</label>
+          <input
+            class="form__input"
+            type="text"
+            id="phone"
+            value="0123456789"
+          />
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="address">Địa Chỉ:</label>
+          <textarea class="form__textarea" id="address">
+123 Đường ABC, Quận 1, TP. Hồ Chí Minh</textarea
+          >
+        </div>
+        <div class="form__group">
+          <label class="form__label">Ảnh Đại Diện:</label>
+          <img
+            class="form__avatar"
+            src="./asset/img/ảnh_chó.jpg"
+            alt="Avatar"
+          />
+          <button class="btn form__button">Thay Đổi Ảnh</button>
+        </div>
+        <button class="btn form__button">Lưu Thông Tin</button>
+      </div>
 
-        <!-- Quản lý mật khẩu -->
-        <div class="section-user">
-            <h2 class="section-user__title">Quản Lý Mật Khẩu</h2>
-            <div class="form__group">
-                <label class="form__label" for="currentPassword">Mật Khẩu Hiện Tại:</label>
-                <input class="form__input" type="password" id="currentPassword">
-            </div>
-            <div class="form__group">
-                <label class="form__label" for="newPassword">Mật Khẩu Mới:</label>
-                <input class="form__input" type="password" id="newPassword">
-            </div>
-            <div class="form__group">
-                <label class="form__label" for="confirmPassword">Xác Nhận Mật Khẩu Mới:</label>
-                <input class="form__input" type="password" id="confirmPassword">
-            </div>
-            <button class="form__button">Cập Nhật Mật Khẩu</button>
+      <!-- Quản lý mật khẩu -->
+      <div class="section-user">
+        <h2 class="section-user__title">Quản Lý Mật Khẩu</h2>
+        <div class="form__group">
+          <label class="form__label" for="currentPassword"
+            >Mật Khẩu Hiện Tại:</label
+          >
+          <input class="form__input" type="password" id="currentPassword" />
         </div>
-</body>
+        <div class="form__group">
+          <label class="form__label" for="newPassword">Mật Khẩu Mới:</label>
+          <input class="form__input" type="password" id="newPassword" />
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="confirmPassword"
+            >Xác Nhận Mật Khẩu Mới:</label
+          >
+          <input class="form__input" type="password" id="confirmPassword" />
+        </div>
+        <button class="btn form__button">Cập Nhật Mật Khẩu</button>
+      </div>
+      <!-- Lịch sử mua hàng -->
+      <div class="section-user">
+        <h2 class="section-user__title">Lịch Sử Mua Hàng</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="table__header">Mã Đơn Hàng</th>
+              <th class="table__header">Ngày Đặt</th>
+              <th class="table__header">Trạng Thái</th>
+              <th class="table__header">Tổng Tiền</th>
+              <th class="table__header">Chi Tiết</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="table__cell">#001</td>
+              <td class="table__cell">2024-12-01</td>
+              <td class="table__cell table__status table__status--processing">
+                Đang Xử Lý
+              </td>
+              <td class="table__cell">500,000 VND</td>
+              <td class="table__cell"><a class="button" href="#">Xem</a></td>
+            </tr>
+            <tr>
+              <td class="table__cell">#002</td>
+              <td class="table__cell">2024-11-25</td>
+              <td class="table__cell table__status table__status--delivered">
+                Đã Giao
+              </td>
+              <td class="table__cell">1,200,000 VND</td>
+              <td class="table__cell"><a class="button" href="#">Xem</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Ưa thích/Ưu đãi -->
+      <div class="section-user">
+        <h2 class="section-user__title">Sản Phẩm Yêu Thích</h2>
+        <div class="favorite__item">
+          <img
+            class="favorite__item-image"
+            src="./asset/img/Diamond Picture/De Beers Centenary Diamond.jpg"
+            alt="De Beers Centenary Diamond"
+          />
+          <div class="favorite__item-info">
+            <p class="favorite__item-name">Tên Sản Phẩm: Đồng Hồ Cao Cấp</p>
+            <div class="favorite__item-more">
+              <button class="btn favorite__item-button">
+                Thêm vào giỏ hàng
+              </button>
+              <button class="btn favorite__item-button">Xóa</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quản lý địa chỉ giao hàng -->
+      <div class="section-user">
+        <h2 class="section-user__title">Quản Lý Địa Chỉ Giao Hàng</h2>
+        <div class="address__item">
+          <p class="address__details">123 Đường ABC, Quận 1, TP. Hồ Chí Minh</p>
+          <button class="btn address__button">Sửa</button>
+          <button class="btn address__button">Xóa</button>
+          <button class="btn address__button">Đặt Mặc Định</button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
