@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết Đơn hàng</title>
+</head>
+<body>
+    <h1>Chi tiết Đơn hàng</h1>
+    <p><strong>ID:</strong> {{ order.id }}</p>
+    <p><strong>Khách hàng:</strong> {{ order.customer }}</p>
+    <p><strong>Ghi chú:</strong> {{ order.notes }}</p>
+    <p><strong>Tổng giá:</strong> {{ order.total_price }}</p>
+    <p><strong>Trạng thái:</strong> {{ order.status }}</p>
+
+    <a href="{% url 'create_order' %}">Quay lại Tạo Đơn hàng</a>
+</body>
+</html>
