@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to Inventory Management</h1>
+    <ul>
+        <li><a href="{% url 'view_inventory' %}">View Inventory</a></li>
+        <li><a href="{% url 'low_stock_report' %}">Low Stock Report</a></li>
+        <li><a href="{% url 'update_inventory' product_id=1 %}">Update Inventory (Example)</a></li>
+    </ul>
+</body>
+</html>

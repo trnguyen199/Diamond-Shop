@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cập nhật hàng tồn kho</title>
+</head>
+<body>
+    <a href="{% url 'home' %}">Trang Chủ</a>
+    <h1>Cập nhật tồn kho</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="quantity">Số lượng mới:</label>
+        <input type="number" id="quantity" name="quantity" required>
+        <button type="submit">Cập Nhật</button>
+    </form>
+</body>
+</html>
