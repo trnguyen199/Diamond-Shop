@@ -19,74 +19,91 @@
       <h1 class="header-user">Quản Lý Thông Tin Cá Nhân</h1>
 
       <!-- Thông tin cá nhân -->
-      <div class="section-user">
-        <h2 class="section-user__title">Thông Tin Cá Nhân</h2>
-        <div class="form__group">
-          <label class="form__label" for="fullName">Họ và Tên:</label>
+      <!-- Thêm id cho form, đổi nút "Thay Đổi Ảnh" sang type="button" -->
+      <form id="personalInfoForm" action="#" method="POST">
+        <div class="section-user">
+          <h2 class="section-user__title">Thông Tin Cá Nhân</h2>
+          <div class="form__group">
+            <label class="form__label" for="fullName">Họ và Tên:</label>
+            <input
+              class="form__input"
+              type="text"
+              id="fullName"
+              value="Nguyễn Văn A"
+            />
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="email">Email:</label>
+            <input
+              class="form__input"
+              type="email"
+              id="email"
+              value="example@email.com"
+            />
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="phone">Số Điện Thoại:</label>
+            <input
+              class="form__input"
+              type="text"
+              id="phone"
+              value="0123456789"
+            />
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="address">Địa Chỉ:</label>
+            <textarea
+              class="form__textarea"
+              id="address"
+            >123 Đường ABC, Quận 1, TP. Hồ Chí Minh</textarea>
+          </div>
+          <div class="form__group">
+            <label class="form__label">Ảnh Đại Diện:</label>
+            <img
+              class="form__avatar"
+              src="./asset/img/ảnh_chó.jpg"
+              alt="Avatar"
+            />
+            <!-- Đổi sang type="button" -->
+            <button type="button" class="btn form__button">Thay Đổi Ảnh</button>
+          </div>
           <input
-            class="form__input"
-            type="text"
-            id="fullName"
-            value="Nguyễn Văn A"
+            type="submit"
+            class="btn form__button"
+            value="Lưu thông tin"
           />
         </div>
-        <div class="form__group">
-          <label class="form__label" for="email">Email:</label>
-          <input
-            class="form__input"
-            type="email"
-            id="email"
-            value="example@email.com"
-          />
-        </div>
-        <div class="form__group">
-          <label class="form__label" for="phone">Số Điện Thoại:</label>
-          <input
-            class="form__input"
-            type="text"
-            id="phone"
-            value="0123456789"
-          />
-        </div>
-        <div class="form__group">
-          <label class="form__label" for="address">Địa Chỉ:</label>
-          <textarea class="form__textarea" id="address">
-123 Đường ABC, Quận 1, TP. Hồ Chí Minh</textarea
-          >
-        </div>
-        <div class="form__group">
-          <label class="form__label">Ảnh Đại Diện:</label>
-          <img
-            class="form__avatar"
-            src="./asset/img/ảnh_chó.jpg"
-            alt="Avatar"
-          />
-          <button class="btn form__button">Thay Đổi Ảnh</button>
-        </div>
-        <button class="btn form__button">Lưu Thông Tin</button>
-      </div>
+      </form>
 
       <!-- Quản lý mật khẩu -->
+      <!-- Thêm id cho form -->
       <div class="section-user">
         <h2 class="section-user__title">Quản Lý Mật Khẩu</h2>
-        <div class="form__group">
-          <label class="form__label" for="currentPassword"
-            >Mật Khẩu Hiện Tại:</label
-          >
-          <input class="form__input" type="password" id="currentPassword" />
-        </div>
-        <div class="form__group">
-          <label class="form__label" for="newPassword">Mật Khẩu Mới:</label>
-          <input class="form__input" type="password" id="newPassword" />
-        </div>
-        <div class="form__group">
-          <label class="form__label" for="confirmPassword"
-            >Xác Nhận Mật Khẩu Mới:</label
-          >
-          <input class="form__input" type="password" id="confirmPassword" />
-        </div>
-        <button class="btn form__button">Cập Nhật Mật Khẩu</button>
+        <form id="passwordForm" class="form" action="#" method="POST">
+          <div class="form__group">
+            <label class="form__label" for="currentPassword"
+              >Mật Khẩu Hiện Tại:</label
+            >
+            <input class="form__input" type="password" id="currentPassword" />
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="newPassword">Mật Khẩu Mới:</label>
+            <input class="form__input" type="password" id="newPassword" />
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="confirmPassword"
+              >Xác Nhận Mật Khẩu Mới:</label
+            >
+            <input class="form__input" type="password" id="confirmPassword" />
+          </div>
+          <input
+            type="submit"
+            class="btn form__button"
+            value="Cập Nhật Mật Khẩu"
+          />
+        </form>
       </div>
+
       <!-- Lịch sử mua hàng -->
       <div class="section-user">
         <h2 class="section-user__title">Lịch Sử Mua Hàng</h2>
@@ -107,8 +124,12 @@
               <td class="table__cell table__status table__status--processing">
                 Đang Xử Lý
               </td>
-              <td class="table__cell">500,000 VND</td>
-              <td class="table__cell"><a class="button" href="#">Xem</a></td>
+              <td class="table__cell">500,000,000 VND</td>
+              <td class="table__cell">
+                <button class="btn order-detail-btn" data-order-id="001">
+                  Xem
+                </button>
+              </td>
             </tr>
             <tr>
               <td class="table__cell">#002</td>
@@ -116,8 +137,12 @@
               <td class="table__cell table__status table__status--delivered">
                 Đã Giao
               </td>
-              <td class="table__cell">1,200,000 VND</td>
-              <td class="table__cell"><a class="button" href="#">Xem</a></td>
+              <td class="table__cell">1,200,000,000 VND</td>
+              <td class="table__cell">
+                <button class="btn order-detail-btn" data-order-id="002">
+                  Xem
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -133,12 +158,16 @@
             alt="De Beers Centenary Diamond"
           />
           <div class="favorite__item-info">
-            <p class="favorite__item-name">Tên Sản Phẩm: Đồng Hồ Cao Cấp</p>
+            <p class="favorite__item-name">
+              Tên Sản Phẩm: De Beers Centenary Diamond
+            </p>
             <div class="favorite__item-more">
-              <button class="btn favorite__item-button">
+              <button class="btn favorite__item-button add-to-cart-btn">
                 Thêm vào giỏ hàng
               </button>
-              <button class="btn favorite__item-button">Xóa</button>
+              <button class="btn favorite__item-button remove-fav-btn">
+                Xóa
+              </button>
             </div>
           </div>
         </div>
@@ -149,11 +178,11 @@
         <h2 class="section-user__title">Quản Lý Địa Chỉ Giao Hàng</h2>
         <div class="address__item">
           <p class="address__details">123 Đường ABC, Quận 1, TP. Hồ Chí Minh</p>
-          <button class="btn address__button">Sửa</button>
-          <button class="btn address__button">Xóa</button>
-          <button class="btn address__button">Đặt Mặc Định</button>
+          <button class="btn address__button edit-address-btn">Sửa</button>
+          <button class="btn address__button delete-address-btn">Xóa</button>
         </div>
       </div>
     </div>
+    <script src="./asset/js/main.js"></script>
   </body>
 </html>
