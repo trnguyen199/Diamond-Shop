@@ -1,0 +1,10 @@
+<form method="post">
+    {% csrf_token %}
+    <label>Tên sản phẩm:</label>
+    <input type="text" name="name" value="{{ product.name }}" required>
+    <label>Danh mục:</label>
+    <input type="text" name="category" value="{{ product.category }}" required>
+    <label>Giá:</label>
+    <input type="number" name="price" step="0.01" value="{{ product.price }}" required>
+    <button type="submit">Cập nhật</button>
+</form>

@@ -1,0 +1,24 @@
+<table>
+    <thead>
+        <tr>
+            <th>Tên</th>
+            <th>Danh mục</th>
+            <th>Giá</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.category }}</td>
+            <td>{{ product.price }}</td>
+            <td>
+                <a href="{% url 'edit_product' product.id %}">Sửa</a>
+                <a href="{% url 'delete_product' product.id %}">Xóa</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'add_product' %}">Thêm sản phẩm mới</a>
