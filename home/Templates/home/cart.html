@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h4>Taihsnvd</h4>
+        <h4>Xin chao!</h4>
+        <script src="" async defer></script>
+    </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+</head>
+<body>
+    <table class="table">
+        <thead>
+          <tr>
+            <th class="table__header">Sản phẩm</th>
+            <th class="table__header">Giá</th>
+            <th class="table__header">Số lượng</th>
+            <th class="table__header">Tổng Tiền</th>
+            <th class="table__header">Chi Tiết</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+                <tr>
+                    <td class="table__cell">{{ product.sanpham }}</td>
+                    <td class="table__cell">{{ product.gia }}</td>
+                    <td class="table__cell table__status table__status--processing">
+                        <input type="number" name="quantity" min="1" value="{{ product.soluong }}">
+                    </td>
+                    <td class="table__cell">{{ product.tongtien }}</td>
+                    <td class="table__cell"><a class="button" href="#">Xóa</a></td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+      </table>
+      {% comment %} 
+    <tbody>
+        {% for product_id, product in cart.items %}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>
+                <form action="{% url 'update_cart' product_id %}" method="POST">
+                    {% csrf_token %}
+                    <input type="number" name="quantity" value="{{ product.quantity }}" min="1">
+                    <button type="submit">Cập nhật</button>
+                </form>
+            </td>
+            <td>{{ product.price|floatformat:2 }}</td>
+            <td>
+                <a href="{% url 'remove_from_cart' product_id %}">Xóa</a>
+            </td>
+        </tr>
+
+    </tbody> {% endcomment %}
+
+
+
+    {% comment %} <h1>Giỏ hàng</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tổng</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>Bong tai</td>
+                <td>20.000.000</td>
+                <td>
+                    <form method="POST">
+                        <input type="number" name="quantity" min="1">
+                        <button type="submit">Cập nhật</button>
+                    </form>
+                </td>
+                <td>20.000.000</td>
+                <td>
+                    <a><i class="fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Bong tai</td>
+                <td>20.000.000</td>
+                <td>
+                    <form method="POST">
+                        <input type="number" name="quantity" min="1">
+                        <button type="submit">Cập nhật</button>
+                    </form>
+                </td>
+                <td>20.000.000</td>
+                <td>
+                    <a><i class="fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Bong tai</td>
+                <td>20.000.000</td>
+                <td>
+                    <form method="POST">
+                        <input type="number" name="quantity" min="1">
+                        <button type="submit">Cập nhật</button>
+                    </form>
+                </td>
+                <td>20.000.000</td>
+                <td>
+                    <a><i class="fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Bong tai</td>
+                <td>20.000.000</td>
+                <td>
+                    <form method="POST">
+                        <input type="number" name="quantity" min="1">
+                        <button type="submit">Cập nhật</button>
+                    </form>
+                </td>
+                <td>20.000.000</td>
+                <td>
+                    <a><i class="fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>  {% endcomment %}
+
+</body>
+</html>
