@@ -1,0 +1,68 @@
+/* discount */
+body{
+    background-color: #e5e7eb;
+}
+
+.discount-wrapper {
+    width: 80%;
+    margin: auto;
+}
+
+.discount-container {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+.box {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+
+}
+
+.left {
+    width: 50%;
+}
+.right {
+    width: 50%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+th {
+    background-color: rgb(190, 190, 187);
+    font-weight: bold;
+}
+
+/* Introduction */
+.row {
+    display: flex;
+    gap: 20px; 
+}
+
+.col-md {
+    flex: 1; 
+    padding: 20px;
+    border: 1px solid #ccc; 
+    text-align: left;
+}
+
+
+/* New styles for overall enhancement */
+
+/* Adding a background color

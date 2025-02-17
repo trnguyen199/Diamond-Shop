@@ -1,0 +1,65 @@
+{% extends "ms-page.html" %}
+
+{% block navbar %}
+  {% include '../includes-page/nav-bar.html' %}
+{% endblock %}
+
+{% block head %}
+  <!-- Kết nối file CSS -->
+  <link rel="stylesheet" href="style.css">  <!-- Đường dẫn tới file style.css -->
+{% endblock %}
+
+<body >
+
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <div class="shop">
+                <h3> The diamond shop</h3>
+                <img src="kimcuong.jpeg" height="170px" width="170px"> 
+                <img src="bongtai.jpeg" height="170px" width="170px"> 
+                <img src="nhan.jpeg" height="170px" width="170px">
+                <img src="daychuyen.jpg" height="170px" width="170px"> 
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="title-info">
+                <h1>Giới thiệu</h1>
+            </div>
+            <div class="text-info roboto-bold">
+                <p> Thế Giới Kim Cương (TGKC) là thương hiệu hàng đầu Việt Nam về kim cương và trang sức, với hơn 800 nhân viên và hơn 100 cửa hàng trên toàn quốc. Từ 30/04/2020, TGKC trở thành thành viên của Tập đoàn VBĐQ DOJI.</p>
+
+                <p> Sản phẩm của TGKC gồm 100% kim cương thiên nhiên có kiểm định quốc tế (GIA, IGI) và trang sức tinh xảo cho cả nam, nữ, cùng trang sức cưới cao cấp.</p>
+            
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="shop-info roboto-bold">
+                <h1>THE DIAMOND SHOP</h1>
+                <div class="shop-info-item">
+                    <h2>Giờ mở cửa</h2>
+                    <p>10:00 - 22:00 Thứ Hai - Thứ Sáu;</p>
+                    <p> 9:30 - 22:00 Cuối tuần và Ngày Lễ</p>
+                </div>
+                <div class="shop-info-item">
+                    <h2>Điện thoại</h2>
+                    <p>18009898</p>
+                </div>
+                <div class="shop-info-item">
+                    <h2>Website</h2>
+                    <p>thediamondshop.com.vn</p>
+                </div>
+                <div class="shop-info-item"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include '../includes-page/footer.html' %}
+{% endblock %}
+</body>
