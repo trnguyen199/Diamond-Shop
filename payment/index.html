@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <form action="">
+
+        <div class="row">
+
+            <div class="col">
+
+                <h3 class="title">Địa Chỉ</h3>
+
+                <div class="inputBox">
+                    <span>Họ và tên :</span>
+                    <input type="text" placeholder="Nguyen Van A">
+                </div>
+                <div class="inputBox">
+                    <span>Email :</span>
+                    <input type="email" placeholder="example@example.com">
+                </div>
+                <div class="inputBox">
+                    <span>Địa chỉ :</span>
+                    <input type="text" placeholder="Số nhà - Đường - Quận/Huyện">
+                </div>
+                <div class="inputBox">
+                    <span>Thành phố :</span>
+                    <input type="text" placeholder="Hồ Chí Minh">
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>Quốc gia :</span>
+                        <input type="text" placeholder="Việt Nam">
+                    </div>
+                    <div class="inputBox">
+                        <span>Mã bưu điện :</span>
+                        <input type="text" placeholder="700000">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col">
+
+                <h3 class="title">Phương Thức Thanh Toán</h3>
+
+                <div class="inputBox">
+                    <span>Thẻ chấp nhận :</span>
+                    <img src="images/thanh_toan_2048x2048.webp" alt="">
+                </div>
+                <div class="inputBox">
+                    <span>Tên trên thẻ :</span>
+                    <input type="text" placeholder="Nguyen Van A">
+                </div>
+                <div class="inputBox">
+                    <span>Số thẻ tín dụng :</span>
+                    <input type="number" placeholder="1111-2222-3333-4444">
+                </div>
+                <div class="inputBox">
+                    <span>Tháng hết hạn :</span>
+                    <input type="text" placeholder="Tháng 1">
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>Năm hết hạn :</span>
+                        <input type="number" placeholder="2025">
+                    </div>
+                    <div class="inputBox">
+                        <span>CVV :</span>
+                        <input type="text" placeholder="123">
+                    </div>
+                </div>
+
+            </div>
+    
+        </div>
+
+        <input type="submit" value="Tiến hành thanh toán" class="submit-btn">
+
+        <h3 class="title">Hoàn Tiền</h3>
+
+        <div class="inputBox">
+            <span>Lý do hoàn tiền :</span>
+            <select>
+                <option value="sai_san_pham">Giao sai sản phẩm</option>
+                <option value="san_pham_loi">Sản phẩm bị lỗi</option>
+                <option value="khong_hai_long">Không hài lòng với sản phẩm</option>
+                <option value="khac">Lý do khác</option>
+            </select>
+        </div>
+        
+        <div class="inputBox">
+            <span>Phương thức hoàn tiền :</span>
+            <select>
+                <option value="bank">Chuyển khoản ngân hàng</option>
+                <option value="card">Hoàn về thẻ tín dụng</option>
+                <option value="wallet">Ví điện tử</option>
+            </select>
+        </div>
+
+        <div class="inputBox">
+            <span>Số tài khoản ngân hàng (nếu chọn chuyển khoản) :</span>
+            <input type="text" placeholder="Nhập số tài khoản">
+        </div>
+
+        <div class="inputBox">
+            <span>Ngân hàng :</span>
+            <input type="text" placeholder="Nhập tên ngân hàng">
+        </div>
+
+        <input type="submit" value="Yêu cầu hoàn tiền" class="refund-btn">
+
+    </form>
+
+</div>    
+
+</body>
+</html>
