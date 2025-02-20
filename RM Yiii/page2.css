@@ -1,0 +1,139 @@
+/* Style cho header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    padding: 15px 50px;
+    color: white;
+}
+
+/* Logo */
+.logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Menu điều hướng */
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700; /* Màu vàng ánh kim */
+}
+main h1
+{
+    font-family: 'Playfair Display', arial;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 100;
+}
+main p
+{
+    font-family: 'Playfair Display', arial;
+    font-size: 18px;
+    font-weight: 100;
+    text-align: left;
+}
+main h2 
+{
+    font-family: 'Playfair Display', arial;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+}
+.main-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+}
+
+
+.main-left {
+    width: 90%;
+    background-color: white;
+    margin-left: 20px;
+    text-align: left;
+}
+
+
+.main-right {
+    width:10%;
+    background-color: White;
+    text-align: right;
+    padding-left: 30px;
+}
+.main-right h3 {
+    display: inline-block; 
+    white-space: nowrap; 
+    padding-left: 120px;
+
+}
+.main-right p
+{
+    display: inline-block; 
+    white-space: nowrap;
+    padding-left: 30px;
+    color:black;
+    text-align: center;
+}
+.main-right img
+{
+    padding-left: 30px;
+}
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.footer-section {
+    width: 30%;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 14px;
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    background-color: #111;
+    padding: 10px;
+    margin-top: 20px;
+}

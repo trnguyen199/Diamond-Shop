@@ -1,0 +1,123 @@
+/* Style cho header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    padding: 15px 50px;
+    color: white;
+}
+
+/* Logo */
+.logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Menu điều hướng */
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700; /* Màu vàng ánh kim */
+}
+
+main
+{
+    margin:10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 100;
+    text-align: left;
+}
+main p
+{
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 100;
+    margin-left:300px;
+    margin-right: 300px;
+}
+
+main h2
+{
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left:300px;
+    margin-right:300px;
+}
+main img
+{
+    margin-left:500px;
+    margin-right:350px;
+    text-align: center;
+}
+main h4
+{
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-weight: 100;
+}
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.footer-section {
+    width: 30%;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 14px;
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    background-color: #111;
+    padding: 10px;
+    margin-top: 20px;
+}
+main h1
+{
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-weight: 100;
+}
