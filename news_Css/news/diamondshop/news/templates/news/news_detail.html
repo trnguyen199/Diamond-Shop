@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ article.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container-main">
+        <div class="container-news-detail">
+            <h1 class="h1-news">{{ article.title }}</h1>
+            <img src="{{ article.image.url }}" class="news-image" alt="{{ article.title }}">
+            <p class="news-date"><strong>Ngày đăng:</strong> {{ article.created_at }}</p>
+            <p class="news-content">{{ article.description }}</p>
+    
+            <div class="new-detail-button">
+                <a href="{% url 'home' %}" ><button class="button-news">Quay lại</button></a>
+                <a href="{% url 'news_update' article.pk %}" ><button class="button-news">Sửa</button></a>
+            </div>
+            <form method="post" action="{% url 'news_delete' article.pk %}" class="form-news">
+                {% csrf_token %}
+                <button type="submit" class="button-news delete">Xóa</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

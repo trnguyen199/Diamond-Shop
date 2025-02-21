@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if form.instance.pk %}Chỉnh sửa{% else %}Thêm mới{% endif %} bài viết</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="h1-news">{% if form.instance.pk %}Chỉnh sửa{% else %}Thêm mới{% endif %} bài viết</h1>
+
+        <form method="post" enctype="multipart/form-data" class="form-news">
+            {% csrf_token %}
+
+            <label class="label-news">Tiêu đề:</label>
+            {{ form.title }}
+
+            <label class="label-news">Mô tả ngắn:</label>
+            {{ form.short_description }}
+
+            <label class="label-news">Nội dung:</label>
+            {{ form.description }}
+
+            <label class="label-news">Hình ảnh:</label>
+            {{ form.image }}
+
+            <button type="submit" class="button-news save">Lưu</button>
+            <a href="{% url 'home' %}"><button type="button" class="button-news cancel">Hủy</button></a>
+        </form>
+    </div>
+</body>
+</html>
