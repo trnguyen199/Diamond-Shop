@@ -1,0 +1,217 @@
+/* Reset mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tổng quan */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 20px;
+}
+
+/* Container chính */
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề */
+h1 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* Danh sách bài viết */
+.news-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 15px;
+}
+
+.news-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ảnh bài viết */
+.news-card img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 15px;
+}
+
+/* Nội dung bài viết */
+.news-card .content {
+    flex: 1;
+}
+
+.news-card h3 {
+    margin: 0 0 5px;
+    font-size: 18px;
+    color: #007bff;
+}
+
+.news-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Nút bấm */
+button {
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s;
+    margin: 5px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Nút xóa */
+button.delete {
+    background: #dc3545;
+}
+
+button.delete:hover {
+    background: #b02a37;
+}
+
+/* Ảnh trong trang chi tiết */
+.news-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Ngày đăng */
+.news-date {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Nội dung bài viết */
+.news-content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Form nhập bài viết */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form textarea {
+    height: 100px;
+}
+/* ============================= */
+/* 📝 FORM NHẬP BÀI VIẾT */
+/* ============================= */
+
+.form-container {
+    width: 50%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề của form */
+h1 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* Nhãn (Tiêu đề, Mô tả, ...) */
+form label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+/* Ô nhập liệu */
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Tùy chỉnh ô nhập textarea */
+form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Ô chọn file */
+input[type="file"] {
+    margin-top: 10px;
+}
+
+/* Nút bấm */
+button {
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
+    margin: 10px 5px 0 0;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Nút hủy */
+button.cancel {
+    background: #dc3545;
+}
+
+button.cancel:hover {
+    background: #b02a37;
+}

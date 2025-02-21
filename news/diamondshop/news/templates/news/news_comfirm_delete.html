@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Xóa bài viết</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bạn có chắc chắn muốn xóa "{{ article.title }}" không?</h1>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="delete">Xóa</button>
+            <a href="{% url 'home' %}"><button type="button">Hủy</button></a>
+        </form>
+    </div>
+</body>
+</html>

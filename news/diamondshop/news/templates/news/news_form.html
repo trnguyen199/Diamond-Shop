@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if form.instance.pk %}Chỉnh sửa{% else %}Thêm mới{% endif %} bài viết</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>{% if form.instance.pk %}Chỉnh sửa{% else %}Thêm mới{% endif %} bài viết</h1>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <label>Tiêu đề:</label>
+            {{ form.title }}
+
+            <label>Mô tả ngắn:</label>
+            {{ form.short_description }}
+
+            <label>Nội dung:</label>
+            {{ form.description }}
+
+            <label>Hình ảnh:</label>
+            {{ form.image }}
+
+            <button type="submit">Lưu</button>
+            <a href="{% url 'home' %}"><button type="button" class="cancel">Hủy</button></a>
+        </form>
+    </div>
+</body>
+</html>
