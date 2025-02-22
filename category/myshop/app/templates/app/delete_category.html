@@ -1,0 +1,11 @@
+{% extends 'app/base.html' %}
+
+{% block title %}Xóa Danh Mục{% endblock %}
+
+{% block content %}
+    <h2>Bạn có chắc muốn xóa danh mục "{{ category.name }}"?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Xóa</button>
+    </form>
+{% endblock %}

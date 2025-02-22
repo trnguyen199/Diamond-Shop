@@ -1,0 +1,18 @@
+{% extends 'app/base.html' %}
+
+{% block title %}Xóa Sản Phẩm{% endblock %}
+
+{% block content %}
+    <h2 class="text-danger">🗑️ Xóa Sản Phẩm</h2>
+    <p>Bạn có chắc muốn xóa "{{ product.name }}" không?</p>
+
+    {% if product.image %}
+        <img src="{{ product.image.url }}" alt="Hình ảnh sản phẩm" width="150" class="shadow"><br><br>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Xóa</button>
+        <a href="{% url 'product_list' %}" class="btn btn-secondary">Hủy</a>
+    </form>
+{% endblock %}

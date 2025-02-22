@@ -1,0 +1,43 @@
+{% extends 'app/base.html' %}
+
+{% block title %}Cập Nhật Sản Phẩm{% endblock %}
+
+{% block content %}
+    <h2>Cập Nhật Sản Phẩm</h2>
+    
+    <form method="post" enctype="multipart/form-data" class="p-3 border rounded bg-light">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            <label for="id_name" class="form-label">Tên sản phẩm:</label>
+            {{ form.name }}
+        </div>
+
+        <div class="mb-3">
+            <label for="id_category" class="form-label">Danh mục:</label>
+            {{ form.category }}
+        </div>
+
+        <div class="mb-3">
+            <label for="id_price_new" class="form-label">Giá mới:</label>
+            {{ form.price_new }}
+        </div>
+
+        <div class="mb-3">
+            <label for="id_price_old" class="form-label">Giá cũ (tùy chọn):</label>
+            {{ form.price_old }}
+        </div>
+
+        <div class="mb-3">
+            <label for="id_image" class="form-label">Hình ảnh hiện tại:</label><br>
+            {% if form.instance.image %}
+                <img src="{{ form.instance.image.url }}" alt="Hình ảnh sản phẩm" width="150"><br>
+            {% endif %}
+            <label for="id_image" class="form-label">Chọn ảnh mới:</label>
+            {{ form.image }}
+        </div>
+
+        <button type="submit" class="btn btn-warning">✏️ Cập Nhật</button>
+        <a href="{% url 'product_list' %}" class="btn btn-secondary">🔙 Quay Lại</a>
+    </form>
+{% endblock %}
