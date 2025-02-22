@@ -5,13 +5,23 @@
 {% block content %}
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center">
-        <h2 class="text-dark fw-bold">🛍️ Danh Sách Sản Phẩm</h2>
+        <h2 class="text-dark fw-bold">🛒 Danh Sách Sản Phẩm</h2>
         <a href="{% url 'add_product' %}" class="btn btn-success fw-bold">➕ Thêm Sản Phẩm</a>
     </div>
 
+    <!-- Hiển thị thông báo khi thêm / xóa sản phẩm -->
+    {% if messages %}
+    <div class="alert alert-info mt-3">
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Danh sách sản phẩm -->
     <div class="table-responsive mt-3">
-        <table class="table table-bordered shadow-lg text-center">
-            <thead class="table-success">
+        <table class="table table-hover table-striped shadow-lg text-center">
+            <thead class="table-dark text-white">
                 <tr>
                     <th>ID</th>
                     <th>Hình ảnh</th>
@@ -25,27 +35,29 @@
             </thead>
             <tbody>
                 {% for product in products %}
-                    <tr>
-                        <td class="align-middle">{{ product.id }}</td>
-                        <td class="align-middle">
-                            {% if product.image %}
-                                <img src="{{ product.image.url }}" alt="Hình ảnh" class="product-img">
-                            {% else %}
-                                ❌
-                            {% endif %}
-                        </td>
-                        <td class="align-middle">{{ product.name }}</td>
-                        <td class="align-middle text-danger fw-bold">{{ product.price_new|floatformat:0 }} đ</td>
-                        <td class="align-middle text-muted">{{ product.price_old|floatformat:0 }} đ</td>
-                        <td class="align-middle">{{ product.created_at|date:"d/m/Y H:i" }}</td>
-                        <td class="align-middle">{{ product.category.name }}</td>
-                        <td class="align-middle">
-                            <a href="{% url 'update_product' product.id %}" class="btn btn-warning btn-sm">✏️ Sửa</a>
-                            <a href="{% url 'delete_product' product.id %}" class="btn btn-danger btn-sm">🗑️ Xóa</a>
-                        </td>
-                    </tr>
+                <tr>
+                    <td class="align-middle">{{ product.id }}</td>
+                    <td class="align-middle">
+                        {% if product.image %}
+                        <img src="{{ product.image.url }}" class="product-img">
+                        {% else %}
+                        <img src="https://via.placeholder.com/50" class="product-img">
+                        {% endif %}
+                    </td>
+                    <td class="align-middle">{{ product.name }}</td>
+                    <td class="align-middle text-danger fw-bold">{{ product.price_new|floatformat:0 }} đ</td>
+                    <td class="align-middle text-muted">{{ product.price_old|floatformat:0 }} đ</td>
+                    <td class="align-middle">{{ product.created_at|date:"d/m/Y H:i" }}</td>
+                    <td class="align-middle">{{ product.category.name }}</td>
+                    <td class="align-middle">
+                        <a href="{% url 'update_product' product.id %}" class="btn btn-warning btn-sm">✏️ Sửa</a>
+                        <a href="{% url 'delete_product' product.id %}" class="btn btn-danger btn-sm">🗑️ Xóa</a>
+                    </td>
+                </tr>
                 {% empty %}
-                    <tr><td colspan="8" class="text-center">Chưa có sản phẩm nào.</td></tr>
+                <tr>
+                    <td colspan="8" class="text-center text-muted">⚠️ Chưa có sản phẩm nào.</td>
+                </tr>
                 {% endfor %}
             </tbody>
         </table>

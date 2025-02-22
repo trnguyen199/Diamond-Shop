@@ -43,7 +43,7 @@ def delete_category(request, category_id):
     category = get_object_or_404(Category, id=category_id)
     if request.method == "POST":
         category.delete()
-        messages.success(request, "🗑️ Danh mục đã bị xóa!")
+        messages.success(request, " Danh mục đã bị xóa!")
         return redirect('category_list')
     return render(request, 'app/delete_category.html', {'category': category})
 
