@@ -1,0 +1,27 @@
+
+{% extends "ms-page.html" %}
+
+{% block navbar%}
+  {% include 'includes-page/nav-bar.html' %}
+{% endblock%}
+
+{% block content %}
+
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'home/assets/css/page-style.css' %}">
+    <link rel="stylesheet" href="{% static 'home/assets/css/profile.css' %}">
+</head>
+<div class="form-user min-h-screen roboto-bold">
+    <h1 class="text-2xl my-4">Bạn chắc chắn muốn đăng xuất?</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input class="px-8 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 hover:cursor-pointer" type="submit" value="Đăng xuất">
+    </form>
+</div>
+
+{% endblock content %}
+{% block footer%}
+{% include 'includes-page/footer.html' %}
+{% endblock%}

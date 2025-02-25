@@ -1,0 +1,211 @@
+{% extends "master-page.html" %}
+   <!-- / Menu -->
+   {% block menu%}
+      {% include 'includes/left-menu.html' %}
+   {% endblock%}
+   <!-- Layout container -->
+     <!-- Navbar -->
+     <!-- / Navbar -->
+
+     <!-- Content wrapper -->
+       <!-- Content -->
+       {% block content%}
+
+       <h2>Danh sách sản phẩm</h2>
+       <a href="" class="add-product-btn">+ Thêm sản phẩm</a>
+       <!-- Form nhập sản phẩm -->
+    <div class="product-form" id="productForm">
+        <span class="close-btn" id="closeForm">&times;</span>
+        <h3>Thêm sản phẩm</h3>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="name">Tên sản phẩm:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="image">Hình ảnh:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+
+            <label for="price">Giá:</label>
+            <input type="number" id="price" name="price" step="0.01" required>
+
+            <label for="old_price">Giá cũ:</label>
+            <input type="number" id="old_price" name="old_price" step="0.01">
+            <button type="submit">Lưu</button>
+        </form>
+    </div>
+       
+       <div class="container">
+    </div>
+       <table>
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Hình ảnh</th>
+                  <th>Tên </th>
+                  <th>Giá mới</th>
+                  <th>Giá cũ</th>
+                  <th>Ngày tạo</th>
+                  <th>Danh mục ID</th>
+                  <th>Thao tác</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for product in products %}
+                  <tr>
+                      <td>{{ product.id }}</td>
+                      <td><img src="{{ product.image.url }}" alt="Product {{ product.id }}"></td>
+                      <td class="">{{ product.name }}</td>
+                      <td class="price">{{ product.price }}₫</td>
+                      <td class="old-price">{% if product.old_price %}{{ product.old_price }}₫{% else %}--{% endif %}</td>
+                      <td>{{ product.created|date:"d/m/Y H:i" }}</td>
+                      <td>{{ product.category.Category_id }}</td>
+                      <td>
+                        <button class="edit-btn">Sửa</button>
+                        <button class="save-btn" style="display: none;">OK</button>
+                        <button class="delete-btn">Xóa</button>
+                      </td>
+                      
+
+                  </tr>
+              {% empty %}
+                  <tr>
+                      <td colspan="6">Không có sản phẩm nào.</td>
+                  </tr>
+              {% endfor %}
+          </tbody>
+          <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const addBtn = document.querySelector(".add-product-btn");
+                const form = document.getElementById("productForm");
+                const closeBtn = document.getElementById("closeForm");
+    
+                addBtn.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    form.style.display = "block";
+                });
+    
+                closeBtn.addEventListener("click", function() {
+                    form.style.display = "none";
+                });
+            });
+        </script>
+        </table>
+         
+          <style>
+
+                
+          table {
+              width: 100%;
+              border-collapse: collapse;
+              margin-top: 20px;
+          }
+          th, td {
+              border: 1px solid #ddd;
+              padding: 10px;
+              text-align: center;
+          }
+          th {
+              background-color: #f4f4f4;
+          }
+          img {
+              width: 80px;
+              height: 80px;
+              object-fit: cover;
+              border-radius: 5px;
+          }
+          .price , .old-price {
+              color: red;
+              font-weight: bold;
+          }
+          .add-product-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .product-form {
+
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 80px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+        .product-form form {
+            display: grid;
+            grid-template-columns: 1fr; /* Chỉ có 1 cột */
+            gap: 10px; /* Khoảng cách giữa các phần tử */
+            justify-items: center;
+        }
+        .close-btn {
+            cursor: pointer;
+            color: red;
+            float: right;
+            font-size: 18px;
+        }
+
+        input {
+            width: 100%; /* Chiều rộng full container */
+            padding: 10px; /* Khoảng cách bên trong */
+            border: 2px solid #ccc; /* Viền */
+            border-radius: 5px; /* Bo góc */
+            font-size: 16px; /* Kích thước chữ */
+        }
+        input:focus {
+            border-color: #007BFF; /* Đổi màu viền khi focus */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Hiệu ứng sáng nhẹ */
+            outline: none; /* Bỏ viền mặc định */
+        }
+        .edit-btn {
+            background-color: #28a745; /* Màu xanh lá */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .edit-btn:hover {
+            background-color: #218838; /* Màu xanh đậm khi hover */
+        }
+        
+        .delete-btn {
+            background-color: #dc3545; /* Màu đỏ */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .delete-btn:hover {
+            background-color: #c82333; /* Màu đỏ đậm khi hover */
+        }
+        .save-btn {
+            background-color: #007bff; /* Màu xanh dương */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: none; /* Mặc định ẩn */
+        }
+        
+        .save-btn:hover {
+            background-color: #0056b3; /* Màu xanh dương đậm khi hover */
+        }
+       {% endblock%}
+       
+
+   
+       <!-- / Content -->
+
+       <!-- Footer -->
+       <!-- / Footer -->

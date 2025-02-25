@@ -1,0 +1,91 @@
+
+/* Định dạng chung cho form */
+.form-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9fafb;
+}
+
+/* Tiêu đề */
+.form-user h1 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Form */
+.form-user form {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Căn label về bên trái */
+.form-user label {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+}
+.form-user label:nth-child(2) {
+    text-align: center;
+}
+
+/* input */
+.form-user input[type="text"],
+.form-user input[type="email"],
+.form-user input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* login btn */
+.form-user input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #dbbd37;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-user input[type="submit"]:hover {
+    background-color: #f1d246;
+}
+
+
+.form-user p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.form-user a {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.form-user a:hover {
+    color: #1d4ed8;
+}
+.actions {
+    padding: 20px;
+}
+.flex-col-head a {
+    font-size: 15px;
+}
+.flex-head {
+    margin-top: 10px;
+}
+

@@ -1,0 +1,30 @@
+{% load custom_filters %}
+
+{% for product in products %}
+        <div class="product-card hvr-shrink" data-category-id={{product.Category_id}} data-id={{product.id}}>
+        <img src="{{product.image.url}}" alt="">
+
+        <h3>{{product.name}}</h3>
+
+        <!-- Giá sản phẩm -->
+        <p class="price"> {{product.price|format_number}}VND</p>
+
+        <!-- Form thêm giỏ hàng -->
+        <form method="post" action="">
+            {% csrf_token %}
+            
+        </form>
+        <button data-product={{product.id}} data-action="add" class="update-cart add-cart">Thêm vào giỏ</button>
+        <!-- Nút yêu thích -->
+        <button class="favorite"><i class="fa-regular fa-heart"></i></button>
+
+        <!-- Đánh giá 5 sao -->
+        <div class="star-rating">
+            <label for="star1">&#9733;</label>
+            <label for="star2">&#9733;</label>
+            <label for="star3">&#9733;</label>
+            <label for="star4">&#9733;</label>
+            <label for="star5">&#9733;</label>
+        </div>
+    </div>
+{% endfor %}

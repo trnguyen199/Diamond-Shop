@@ -1,0 +1,141 @@
+{% extends "master-page.html" %}
+   <!-- / Menu -->
+   {% block menu%}
+      {% include 'includes/left-menu.html' %}
+   {% endblock%}
+   <!-- Layout container -->
+     <!-- Navbar -->
+     <!-- / Navbar -->
+
+     <!-- Content wrapper -->
+       <!-- Content -->
+
+{% block content%}
+    <form method="post">
+        {% csrf_token %}
+    </form>
+
+    <h2>Danh mục sản phẩm</h2>
+    <a href="" class="add-category-btn">+ Thêm danh mục</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tên đăng nhập</th>
+                <th>Họ và tên</th>
+                <th>Email</th>
+                <th>Điểm tích lũy</th>
+                <th>Vai trò</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for category in categories %}
+                <tr  data-id="{{ category.id }}">
+                    <td>{{ category.id }}</td>
+                    <td class="name">
+                        <span class="category-name">{{ category.name }}</span>
+                        <input type="text" class="edit-input" value="{{ category.name }}" style="display: none;">
+                    </td>
+                    <td>{{ category.created|date:"d/m/Y H:i" }}</td>
+                    <td>
+                        <button class="edit-btn">Sửa</button>
+                        <button class="save-btn" style="display: none;">OK</button>
+                    </td>
+
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">Không có danh mục nào.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .add-category-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector("tbody").addEventListener("click", function (e) {
+                let target = e.target;
+        
+                // Khi nhấn nút "Sửa"
+                if (target.classList.contains("edit-btn")) {
+                    let row = target.closest("tr");
+                    row.querySelector(".category-name").style.display = "none";
+                    row.querySelector(".edit-input").style.display = "inline-block";
+                    row.querySelector(".edit-btn").style.display = "none";
+                    row.querySelector(".save-btn").style.display = "inline-block";
+                }
+        
+                // Khi nhấn nút "OK"
+                if (target.classList.contains("save-btn")) {
+                    let row = target.closest("tr");
+                    let categoryId = row.getAttribute("data-id"); // ✅ Lấy ID từ `data-id`
+                    let newName = row.querySelector(".edit-input").value;
+        
+                    if (!categoryId) {
+                        console.error("❌ Lỗi: Không tìm thấy categoryId!");
+                        return;
+                    }
+        
+                    fetch(`/qldanhmuc/update/${categoryId}/`, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]").value
+                        },
+                        body: JSON.stringify({ name: newName })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            row.querySelector(".category-name").textContent = newName;
+                            row.querySelector(".category-name").style.display = "inline-block";
+                            row.querySelector(".edit-input").style.display = "none";
+                            row.querySelector(".edit-btn").style.display = "inline-block";
+                            row.querySelector(".save-btn").style.display = "none";
+                        } else {
+                            alert("Cập nhật thất bại!");
+                        }
+                    })
+                    .catch(error => console.error("❌ Lỗi khi gửi request:", error));
+                }
+            });
+        });
+        
+    </script>
+{% endblock%}

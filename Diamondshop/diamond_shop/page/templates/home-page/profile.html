@@ -1,0 +1,160 @@
+{% extends "ms-page.html" %}
+
+{% block navbar%}
+  {% include '../includes-page/nav-bar.html' %}
+{% endblock%}
+
+{% block content%}
+<style>
+  .modal-nofi {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: none;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(20px); }
+}
+
+  {% comment %} /* Hiển thị modal */
+  .show {
+      display: block;
+      opacity: 1;
+  } {% endcomment %}
+</style>
+<div class="container-user roboto-bold">
+  <h1 class="header-user">Quản Lý Thông Tin Cá Nhân</h1>
+  <!-- Thông tin cá nhân -->
+  <!-- Thêm id cho form, đổi nút "Thay Đổi Ảnh" sang type="button" -->
+  <form id="personalInfoForm" action="{% url 'page:getProfile' %}" method="POST">
+    {% csrf_token %}
+    <div class="section-user">
+      <div class="form__group">
+        <label class="form__label" for="username">Tên đăng nhập</label>
+        <input
+          class="form__input" 
+          id="username"
+          value="{{ user.username }}"
+          readonly 
+        />
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="fullName">Họ và Tên:</label>
+        <input
+        class="form__input"
+        type="text"
+        id="fullname"
+        name="fullname"
+        value="{{ customer.fullname|default:'' }}"
+    />
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="email">Email:</label>
+        <input
+          class="form__input"
+          type="email"
+          id="email"
+          value="{{ user.email }}"
+          readonly 
+        />
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="phone">Số Điện Thoại:</label>
+        <input
+          class="form__input"
+          type="text"
+          id="phone"
+          name="phone"
+          value="{{ customer.phone|default:'' }}"
+      />
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="address">Địa Chỉ:</label>
+        <textarea
+          class="form__textarea"
+          id="address"
+          name="address"
+        >{{ customer.address|default:'' }}</textarea>
+      </div>    
+      <input
+        type="submit"
+        class="form__button"
+        value="Lưu thông tin"
+      />
+
+    </div>
+  </form>
+
+<!-- Quản lý mật khẩu -->
+  <!-- Thêm id cho form -->
+ <div class="section-user">
+    <h2 class="section-user__title">Quản Lý Mật Khẩu</h2>
+    <form id="passwordForm" class="form" action="#" method="POST">
+      <div class="form__group">
+        <label class="form__label" for="currentPassword"
+          >Mật Khẩu Hiện Tại:</label
+        >
+        <input class="form__input" type="password" id="currentPassword" />
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="newPassword">Mật Khẩu Mới:</label>
+        <input class="form__input" type="password" id="newPassword" />
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="confirmPassword"
+          >Xác Nhận Mật Khẩu Mới:</label
+        >
+        <input class="form__input" type="password" id="confirmPassword" />
+      </div>
+      <input
+        type="submit"
+        class="form__button"
+        value="Cập Nhật Mật Khẩu"
+      />
+    </form> 
+   
+  </div>
+  <div id="successModal" class="modal-nofi">
+    Lưu thành công!
+</div>
+</div>
+
+<script> 
+  document.querySelector(".form__button").addEventListener("click", function() {
+    localStorage.setItem("showModal", "true");
+    location.reload(); // Tải lại trang
+});
+
+window.onload = function() {
+    if (localStorage.getItem("showModal") === "true") {
+        var modal = document.getElementById("successModal");
+        modal.style.display = "block";
+
+        // Xóa trạng thái sau khi đã hiển thị modal
+        localStorage.removeItem("showModal");
+
+        // Ẩn modal sau 2 giây
+        setTimeout(function () {
+            modal.style.display = "none";
+        }, 2000);
+    }
+};
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{% endblock%}
+
+{% block footer%}
+{% include '../includes-page/footer.html' %}
+{% endblock%}

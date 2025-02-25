@@ -1,0 +1,139 @@
+{% extends "ms-page.html" %}
+
+{% block navbar%}
+  {% include '../includes-page/nav-bar.html' %}
+{% endblock%}
+
+{% block content%}
+
+<div class="discount-wrapper roboto-light">
+    <div class="discount-level">
+      <!-- Các mức khuyến mãi -->
+       <!-- level-top -->
+      <div class="discount-level_top">
+        <!-- level_1 -->
+        <div class="box box-level box-level_1">
+          <p class="level-content"><strong>Mức 1</strong></p>
+          <h1>Giảm 3% trên tổng hóa đơn</h1>
+          <h3>5 điểm cho mỗi 10 triệu VNĐ</h3>
+          <h4>
+            Điều kiện áp dụng: Hóa đơn từ 50 triệu VNĐ đến dưới 100 triệu VNĐ
+          </h4>
+        </div>
+        <!-- level_2 -->
+        <div class="box box-level box-level_2">
+          <p class="level"><strong>Mức 2</strong></p>
+          <h1>
+            Giảm 5% trên tổng hóa đơn hoặc tặng phiếu bảo dưỡng kim cương miễn
+            phí
+          </h1>
+          <h3>7 điểm cho mỗi 10 triệu VNĐ</h3>
+          <h4>
+            Điều kiện áp dụng: Hóa đơn từ 100 triệu VNĐ đến dưới 200 triệu VNĐ
+          </h4>
+        </div>
+        <!-- level_3-->
+        <div class="box box-level box-level_3">
+          <p class="level"><strong>Mức 3</strong></p>
+          <h1>
+            Giảm 8% trên tổng hóa đơn, tặng quà cao cấp (Hộp trang sức hoặc
+            phiếu mua hàng)
+          </h1>
+          <h3>10 điểm cho mỗi 10 triệu VNĐ</h3>
+          <h4>
+            Điều kiện áp dụng: Hóa đơn từ 200 triệu VNĐ đến dưới 500 triệu VNĐ
+          </h4>
+        </div>
+      </div>
+      <!-- level bottom -->
+      <div class="discount-level_bottom">
+        <!-- level_4 -->
+        <div class="box box-level box-level_4">
+          <p class="level"><strong>Mức 4</strong></p>
+          <h1>
+            Giảm 10% trên tổng hóa đơn, miễn phí kiểm định GIA và bảo hành 3
+            năm
+          </h1>
+          <h3>15 điểm cho mỗi 10 triệu VNĐ</h3>
+          <h4>Điều kiện áp dụng: Hóa đơn trên 500 triệu VNĐ</h4>
+        </div>
+        <!-- Mức VIP-->
+        <div class="box box-level box-level_5">
+          <p class="level"><strong>Mức VIP</strong></p>
+          <h1>
+            Giảm 13% trên hóa đơn tiếp theo, tặng quà kim cương mini hoặc
+            phiếu mua hàng trị giá 100 triệu VNĐ
+          </h1>
+          <h3>20 điểm cho mỗi 10 triệu VNĐ</h3>
+          <h4>
+            Điều kiện áp dụng: Tổng giá trị mua tích lũy trên 5 tỷ VNĐ trong
+            năm
+          </h4>
+        </div>
+      </div>
+    </div>
+<br>
+    <div class="discount-container">
+      <!-- Cột trái: Ngày Giảm Giá Đặc Biệt -->
+      <div class="discount-container_top">
+        <h1>Ngày Giảm Giá Đặc Biệt</h1>
+        <table>
+          <tr>
+            <th>Ngày Áp Dụng</th>
+            <th>Ưu Đãi Đặc Biệt</th>
+          </tr>
+          <tr>
+            <td>Ngày lễ tình nhân (14/2)</td>
+            <td>
+              Giảm thêm 5% cho hóa đơn từ 100 triệu VNĐ, tặng quà cao cấp
+            </td>
+          </tr>
+          <tr>
+            <td>Ngày Quốc tế phụ nữ (8/3)</td>
+            <td>
+              Giảm 7% cho tất cả hóa đơn, miễn phí khắc tên và bảo dưỡng
+            </td>
+          </tr>
+          <tr>
+            <td>Sinh nhật shop (28/10 - 30/10)</td>
+            <td>Giảm 10% cho hóa đơn từ 50 triệu VNĐ</td>
+          </tr>
+          <tr>
+            <td>Ngày Quốc khánh (2/9)</td>
+            <td>Giảm 10% cho hóa đơn từ 100 triệu VNĐ trở lên</td>
+          </tr>
+          <tr>
+            <td>Black Friday</td>
+            <td>Giảm 15% cho hóa đơn từ 100 triệu VNĐ trở lên</td>
+          </tr>
+          <tr>
+            <td>Ngày Tri Ân Khách Hàng (31/12)</td>
+            <td>
+              Giảm 10% cho hóa đơn trên 300 triệu VNĐ, tặng phiếu giảm giá 10
+              triệu VNĐ
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Cột phải: Chính sách điểm tích lũy -->
+      <div class="discount-container_bottom">
+        <h1>Chính Sách Quy Đổi & Điểm Tích Lũy</h1>
+        <h3>1. Quy Đổi Điểm</h3>
+        <p>● 1 điểm tương đương với 10,000 VNĐ.</p>
+        <p>● Điểm có thể được sử dụng để giảm giá hoặc đổi quà tặng.</p>
+
+        <h3>2. Ưu Đãi VIP</h3>
+        <p>● Tặng voucher 100 triệu VNĐ khi đạt 1,000 điểm tích lũy.</p>
+        <p>● Miễn phí bảo hành trọn đời cho kim cương đã mua.</p>
+
+        <h3>3. Hạn Sử Dụng Điểm</h3>
+        <p>● Điểm có giá trị trong 14 tháng kể từ ngày phát sinh.</p>
+      </div>
+    </div>
+  </div>
+{% endblock%}
+
+{% block footer%}
+{% include '../includes-page/footer.html' %}
+{% endblock%}

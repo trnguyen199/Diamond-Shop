@@ -1,0 +1,222 @@
+{% extends "master-page.html" %}
+   <!-- / Menu -->
+   {% block menu%}
+      {% include 'includes/left-menu.html' %}
+   {% endblock%}
+   <!-- Layout container -->
+     <!-- Navbar -->
+     <!-- / Navbar -->
+
+     <!-- Content wrapper -->
+       <!-- Content -->
+
+{% block content%}
+    <form method="post">
+        {% csrf_token %}
+    </form>
+
+    <h2>Danh mục sản phẩm</h2>
+    <a href="" class="add-category-btn">+ Thêm danh mục</a>
+    <div class="category-form" id="categoryForm">
+        <span class="close-btn" id="closeForm">&times;</span>
+        <h3>Thêm danh mục</h3>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="name">Tên danh mục:</label>
+            <input type="text" id="name" name="name" required>
+            <button type="submit">Lưu</button>
+        </form>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tên danh mục</th>
+                <th>Ngày tạo</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for category in categories %}
+                <tr  data-id="{{ category.id }}">
+                    <td>{{ category.id }}</td>
+                    <td class="name">
+                        <span class="category-name">{{ category.name }}</span>
+                        <input type="text" class="edit-input" value="{{ category.name }}" style="display: none;">
+                    </td>
+                    <td>{{ category.created|date:"d/m/Y H:i" }}</td>
+                    <td>
+                        <button class="edit-btn">Sửa</button>
+                        <button class="save-btn" style="display: none;">OK</button>
+                        <button class="delete-btn">Xóa</button>
+
+                    </td>
+
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">Không có danh mục nào.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .add-category-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .category-form {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+        .close-btn {
+            cursor: pointer;
+            color: red;
+            float: right;
+            font-size: 18px;
+        }
+        .edit-btn {
+            background-color: #28a745; /* Màu xanh lá */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .edit-btn:hover {
+            background-color: #218838; /* Màu xanh đậm khi hover */
+        }
+        
+        .delete-btn {
+            background-color: #dc3545; /* Màu đỏ */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .delete-btn:hover {
+            background-color: #c82333; /* Màu đỏ đậm khi hover */
+        }
+        .save-btn {
+            background-color: #007bff; /* Màu xanh dương */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: none; /* Mặc định ẩn */
+        }
+        
+        .save-btn:hover {
+            background-color: #0056b3; /* Màu xanh dương đậm khi hover */
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector("tbody").addEventListener("click", function (e) {
+                let target = e.target;
+        
+                // Khi nhấn nút "Sửa"
+                if (target.classList.contains("edit-btn")) {
+                    let row = target.closest("tr");
+                    row.querySelector(".category-name").style.display = "none";
+                    row.querySelector(".edit-input").style.display = "inline-block";
+                    row.querySelector(".edit-btn").style.display = "none";
+                    row.querySelector(".save-btn").style.display = "inline-block";
+                }
+        
+                // Khi nhấn nút "OK"
+                if (target.classList.contains("save-btn")) {
+                    let row = target.closest("tr");
+                    let categoryId = row.getAttribute("data-id"); // ✅ Lấy ID từ `data-id`
+                    let newName = row.querySelector(".edit-input").value;
+        
+                    if (!categoryId) {
+                        console.error("❌ Lỗi: Không tìm thấy categoryId!");
+                        return;
+                    }
+        
+                    fetch(`/qldanhmuc/update/${categoryId}/`, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]").value
+                        },
+                        body: JSON.stringify({ name: newName })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            row.querySelector(".category-name").textContent = newName;
+                            row.querySelector(".category-name").style.display = "inline-block";
+                            row.querySelector(".edit-input").style.display = "none";
+                            row.querySelector(".edit-btn").style.display = "inline-block";
+                            row.querySelector(".save-btn").style.display = "none";
+                        } else {
+                            alert("Cập nhật thất bại!");
+                        }
+                    })
+                    .catch(error => console.error("❌ Lỗi khi gửi request:", error));
+                }
+            });
+        });
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            const addBtn = document.querySelector(".add-category-btn");
+            const form = document.getElementById("categoryForm");
+            const closeBtn = document.getElementById("closeForm");
+
+            // Khi nhấn vào nút "Thêm danh mục", hiển thị form
+            addBtn.addEventListener("click", function(event) {
+                event.preventDefault();
+                form.style.display = "block";
+            });
+
+            // Khi nhấn vào nút đóng (×), ẩn form
+            closeBtn.addEventListener("click", function() {
+                form.style.display = "none";
+            });
+        });
+    </script>
+{% endblock%}

@@ -1,0 +1,134 @@
+{% extends "ms-page.html" %}
+
+{% block navbar%}
+  {% include '../includes-page/nav-bar.html' %}
+{% endblock%}
+
+{% block content%}
+{% load custom_filters %}
+<script type="text/javascript">
+    var user = '{{request.user|default:'AnonymousUser' }}'
+    function getToken(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    var csrftoken = getToken('csrftoken')
+</script>
+
+<script>
+
+
+    document.addEventListener('click', function (event) {
+        if (event.target.classList.contains('update-cart')) {
+            var productId = event.target.dataset.product;
+            var action = event.target.dataset.action;
+            console.log('Product ID:', productId, 'Action:', action);
+            console.log('USER', user)
+
+            if(user === 'AnonymousUser'){
+                console.log('User is not authenticated')
+                window.location.href = '/accounts/login/';
+            } else {
+                updateUserOrder(productId, action)
+            }
+        }
+    });
+        
+
+
+    function updateUserOrder(productId, action){
+        console.log('User is authenticated, sending data...')
+    
+            var url = '/update_item/'
+    
+            fetch(url, {
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json',
+                    'X-CSRFToken': csrftoken,
+                }, 
+                body:JSON.stringify({'productId':productId, 'action':action})
+            })
+            .then((response) => {
+               return response.json();
+            })
+            .then((data) => {
+                console.log('data', data)
+                let notification = document.getElementById("cartNotification");
+                notification.style.display = "block";
+                setTimeout(() => {
+                    notification.style.display = "none";
+                }, 3000); // Ẩn sau 3 giây
+            
+            });
+    }
+</script>
+<nav class="breadcrumb roboto-bold">
+    <a href="{% url 'page:home' %} ">Trang chủ</a><a href="#"> Sản phẩm</a>
+</nav>
+
+<div class="product-container">
+
+    <aside class="sidebar roboto-bold">
+        <h3>Danh mục sản phẩm</h3>
+        <ul>
+            <li><a href="?category=0" class="filter-category" data-category-id="0">Tất cả sản phẩm</a></li> 
+            <li><a href="?category=1" class="filter-category" data-category-id="1">Nhẫn</a></li> 
+            <li><a href="?category=2" class="filter-category" data-category-id="2">Vòng tay</a></li>
+            <li><a href="?category=3" class="filter-category" data-category-id="3">Dây chuyền</a></li>
+            <li><a href="?category=4" class="filter-category" data-category-id="4">Mặt dây chuyền</a></li>
+            <li><a href="?category=5" class="filter-category" data-category-id="5">Bông tai</a></li>
+            <li><a href="?category=6" class="filter-category" data-category-id="6">Bộ trang sức kim cương cao cấp</a></li>
+
+            
+        </ul>
+    </aside>
+    <section class="product-list roboto-light" id='product-list'>
+        {% block product%}
+            {% include 'product/list-product.html' %}
+        {% endblock%}
+    </section>
+    <div id="cartNotification" class="cart-notification roboto-bold">
+        Đã thêm vào giỏ hàng!
+    </div>
+    
+</div>
+<style>
+    /* CSS cho modal */
+    .cart-notification {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #28a745;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        display: none;
+        font-size: 16px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        animation: fadeInOut 3s ease-in-out;
+    }
+
+    @keyframes fadeInOut {
+        0% { opacity: 0; transform: translateY(20px); }
+        10% { opacity: 1; transform: translateY(0); }
+        90% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 0; transform: translateY(20px); }
+    }
+</style>
+{% endblock%}
+
+{% block footer%}
+{% include '../includes-page/footer.html' %}
+{% endblock%}

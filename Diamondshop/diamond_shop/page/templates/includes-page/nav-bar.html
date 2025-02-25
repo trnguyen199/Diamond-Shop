@@ -1,0 +1,71 @@
+{%load static %}
+<header>
+    <div class="flex-row"  style="width: 100%; padding: 0 10px">
+        <span class="left outfit-std  "><i class="fa fa-phone" aria-hidden="true"></i> 1234567890 - 1234567890</span>
+        <div>
+            <i class="fa fa-envelope flex-end"></i>
+            <span>thediamondshop@gmail.com</span>
+        </div>
+    </div>
+  <div class="header-main">
+      <div class="flex-row">                
+          <div class="flex-col-head">
+              <div class="logo">
+                  <a href="{% url 'page:home' %} "><img src="{% static 'home/assets/img/icons/brands/logo-brands.png' %}"></a>
+              </div>
+          </div>
+          <div class="flex-col-head search">
+                <div class="search-box roboto-light">
+                    <div class="row2">
+                        <input type="text" class="search-input" id="input-box" placeholder="Nhập từ khóa" autocomplete="off">
+                    </div>
+                    <div class="result-box">
+                       
+                    </div>
+                </div>
+          </div>
+          <div class="flex-col-head actions">
+                {% if user.is_authenticated %}
+                    <a id="cart-btn" href="{% url 'page:cart' %}" class="btn flex-head"><i class="fa-solid fa-cart-shopping" ></i></a>
+                    <a href="{% url 'page:getProfile' %}" class="btn flex-head"><i class="fa-solid fa-user"></i></a>
+                   <a href="{% url 'account_logout' %}" class="btn roboto-bold flex-head">ĐĂNG XUẤT</a>
+                {% else %}
+                    <a id="cart-btn" href="{% url 'page:cart' %}" class="btn"><i class="fa-solid fa-cart-shopping" ></i></a>
+                    <a id="profile-btn" href="{% url 'account_login' %}" class="btn roboto-bold">ĐĂNG NHẬP</i></a>
+                    <a id="profile-btn" href="{% url 'account_signup' %}" class="btn roboto-bold">ĐĂNG KÝ</a>
+                {% endif %}
+
+              {% comment %} <a id="profile-btn" href="{% url 'account_login' %}" class="head-btn">ĐĂNG NHẬP</i></a> {% endcomment %}
+
+          </div>
+      </div>
+  </div>
+</header>
+<div class="wide-nav">
+    <div id="toggle-header">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="flex-container">
+        <div class="flex-row roboto-bold">
+            <ul class="nav" id="mobile-menu">
+                <li id="menu-item"><a href="{% url 'page:home' %} " class="nav-top-link"><i class="fa-solid fa-house"></i> Trang chủ</a></li>
+  
+                <li id="menu-item"><a href="{% url 'page:product' %}" class="nav-top-link">Sản phẩm<i class="fa-solid fa-chevron-down sm-icon"></i></a>
+                    
+                    <ul class="sub-menu">
+                      <li><a href="{% url 'page:product' %}?category=1" class="filter-category" data-category-id="1">Nhẫn</a></li>
+                      <li><a href="{% url 'page:product'%}?category=2" class="filter-category" data-category-id="1">Vòng tay</a></li>
+                      <li><a href="{% url 'page:product'%}?category=3" class="filter-category" data-category-id="1">Dây chuyền</a></li> 
+                      <li><a href="{% url 'page:product'%}?category=4" class="filter-category" data-category-id="1">Mặt Dây chuyền</a></li>
+                      <li><a href="{% url 'page:product'%}?category=5" class="filter-category" data-category-id="1">Bông tai</a></li>
+                      <li><a href="{% url 'page:product'%}?category=6" class="filter-category" data-category-id="1">Bộ trang sức</a></li> 
+
+                    </ul>
+                </li>
+            
+                <li id="menu-item"><a href="{% url 'page:introduction' %}" class="nav-top-link">Giới thiệu</a></li>
+                <li id="menu-item"><a href="{% url 'page:discount' %}" class="nav-top-link">Khuyến mãi</a></li>
+                <li id="menu-item"><a href="{% url 'page:contact' %}" class="nav-top-link">Liên hệ</a></li>
+            </ul>
+        </div>
+    </div>

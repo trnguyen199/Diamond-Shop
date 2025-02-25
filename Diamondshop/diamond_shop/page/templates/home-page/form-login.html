@@ -1,0 +1,55 @@
+{% load static %}
+<div id="modal-container-wrap">
+    <div class="modal" id="modal-demo">
+        <div class="modal-header hvr-grow">
+            <button id="btn-close"><i class="fa-solid fa-xmark"></i></i></button> 
+        </div>  
+        <div class="modal-container sign-up">
+            <form action="reg.php" method="post">
+                <h1>Đăng ký tài khoản</h1>
+                <div class="social-icons">
+                    <a href="" class="hvr-grow" ><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="" class="hvr-grow"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="" class="hvr-grow"><i class="fa-brands fa-github"></i></a>
+                    <a href="" class="hvr-grow"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>Sử dụng tên tài khoản hoặc địa chỉ email *</span>
+                <input type="text" placeholder="Tên đăng nhập" class="info" name="username">
+                <input type="email" placeholder="Email" class="info" name="email">
+                <input type="password" placeholder="Mật khẩu" class="info" name="password">
+                <button type="submit" class="hvr-grow" name="btn-reg" value="Đăng ký">Đăng ký</button> 
+            </form>
+        </div>
+
+        <div class="modal-container sign-in">
+            <form action="login.php" method="post">
+                <h1>Đăng nhập</h1>
+                <div class="social-icons">
+                    <a href="" class="hvr-grow" ><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="" class="hvr-grow"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="" class="hvr-grow"><i class="fa-brands fa-github"></i></a>
+                    <a href="" class="hvr-grow"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>Sử dụng tên tài khoản hoặc địa chỉ email *</span>
+                <input type="text" placeholder="Tên đăng nhập" class="info" name="username">
+                <input type="password" placeholder="Mật khẩu" class="info" name="password">
+                <p><a href="" id="forgot-password">Quên mật khẩu?</a></p>
+                <button type="submit" class="hvr-grow" name="btn-log">Đăng nhập</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Chào mừng trở lại!</h1>
+                    <p>Nhập thông tin cá nhân của bạn để sử dụng tất cả các tính năng của trang website</p>
+                    <button class="hidden hvr-grow" id="login">Đăng nhập</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Chào bạn!</h1>
+                    <p>Đăng ký thông tin cá nhân của bạn để sử dụng tất cả các tính năng của trang website</p>
+                    <button class="hidden hvr-grow" id="register">Đăng ký</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,103 @@
+{% load static %}
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+    <div class="app-brand demo">
+      <a href="index.html" class="app-brand-link">
+        <span class="app-brand-logo demo" style="height: 100px">
+            <a href="{% url 'page:home' %} "><img style="width: 250px; height: 60px" src="{% static 'home/assets/img/icons/brands/logo-brands.png' %}"></a>
+    </span>
+
+      <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+        <i class="bx bx-chevron-left bx-sm align-middle"></i>
+      </a>
+    </div>
+
+    <div class="menu-inner-shadow"></div>
+
+    <ul class="menu-inner py-1">
+      <!-- Dashboard -->
+      <li class="menu-item active">
+        <a href="index.html" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-home-circle"></i>
+          <div data-i18n="Analytics">Trang chủ</div>
+        </a>
+      </li>
+
+      
+
+      <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">Quản lý</span>
+      </li>
+      <!-- Layouts -->
+      <li class="menu-item">
+        <a href="{% url 'page_mg:qldanhmuc' %}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-layout"></i>
+          <div data-i18n="Layouts">Danh mục sản phẩm</div>
+        </a>
+        <a href="{% url 'page_mg:qlsanpham' %}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-layout"></i>
+          <div data-i18n="Layouts">Sản phẩm</div>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="{% url 'page_mg:qltaikhoan' %}" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+          <div data-i18n="Authentications">Tài khoản</div>
+        </a>
+      <!-- Khách h -->
+      <li class="menu-header small text-uppercase"><span class="menu-header-text">KHÁCH HÀNG</span></li>
+      
+        {% comment %} <ul class="menu-sub">
+          <li class="menu-item">
+            <a href="auth-login-basic.html" class="menu-link" target="_blank">
+              <div data-i18n="Basic">Đăng nhập</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="auth-register-basic.html" class="menu-link" target="_blank">
+              <div data-i18n="Basic">Đăng ký</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
+              <div data-i18n="Basic">Forgot Password</div>
+            </a>
+          </li>
+        </ul> {% endcomment %}
+      </li>
+
+      {% comment %} <li class="menu-item">
+        <a href="cards-basic.html" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-collection"></i>
+          <div data-i18n="Basic">Khuyến mãi</div>
+        </a>
+      </li> {% endcomment %}
+      {% comment %} contact {% endcomment %}
+      <li class="menu-item">
+        <a href="{% url 'page_mg:qllienhe' %}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-collection"></i>
+          <div data-i18n="Basic">Liên hệ</div>
+        </a>
+      </li>
+
+
+      <!-- Đơn hàng -->
+      <li class="menu-item">
+        <a href="tables-basic.html" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-table"></i>
+          <div data-i18n="Tables">Đơn hàng</div>
+        </a>
+      </li>
+      <!-- Liên hệ -->
+      <li class="menu-header small text-uppercase"><span class="menu-header-text">Liên hệ</span></li>
+      <li class="menu-item">
+        <a
+          href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
+          target="_blank"
+          class="menu-link"
+        >
+          <i class="menu-icon tf-icons bx bx-support"></i>
+          <div data-i18n="Support">Hỗ trợ </div>
+        </a>
+      </li>
+    </ul>
+  </aside>

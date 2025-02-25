@@ -1,0 +1,85 @@
+{% load static %}
+<section class=" w-full h-[700px] bg-cover bg-center" style="background-image: url('{% static 'home/assets/img/backgrounds/banner-sale.jpg' %}');">
+    <div class="inset-0 bg-opacity-20 flex items-center justify-center">
+        <h1 class="text-white text-5xl font-bold"></h1>
+    </div>
+</section>
+<section class="container mx-auto px-4 py-12 roboto-light">
+    <h2 class="text-3xl roboto-bold text-center mb-8">Sản phẩm bán chạy nhất</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+    
+        <a href="{% url 'page:product' %}?category=1" class="n-product p-4 rounded-lg shadow-ef5 hvr-grow">
+            <img src="{% static 'home/assets/img/products/nhan1.jpg' %}" alt="Kim cương 1" class="w-full h-40 object-cover">
+            <h3 class="mt-2 text-lg font-bold">Nhẫn Kim Cương</h3>
+            <p class="text-red-500 font-semibold">50.000.000₫</p>
+            <button data-product={{product.id}} data-action="add" class="update-card add-cart">Thêm vào giỏ</button>
+            <button class="favorite"><i class="fa-regular fa-heart"></i></button>
+        </a>
+        <a href=""class="n-product p-4 rounded-lg shadow-ef5 hvr-grow ">
+            <img src="{% static 'home/assets/img/products/nhan2.jpg' %}" alt="Kim cương 2" class="w-full h-40 object-cover">
+            <h3 class="mt-2 text-lg font-bold">Nhẫn Kim Cương</h3>
+            <p class="text-red-500 font-semibold">70.000.000₫</p>
+            <button data-product={{product.id}} data-action="add" class="update-card add-cart">Thêm vào giỏ</button>
+            <button class="favorite"><i class="fa-regular fa-heart"></i></button>
+        </a>
+        <a class="n-product-4 rounded-lg shadow-ef5 hvr-grow ">
+            <img src="{% static 'home/assets/img/products/lactay1.jpg' %}" alt="Kim cương 3" class="w-full h-80 object-cover">
+            <h3 class="mt-2 text-lg font-bold">Lắc Tay Kim Cương</h3>
+            <p class="text-red-500 font-semibold">275.000.000₫</p>
+            <button data-product={{product.id}} data-action="add" class="update-card add-cart">Thêm vào giỏ</button>
+            <button class="favorite"><i class="fa-regular fa-heart"></i></button>
+        </a>
+        <a class="n-product p-4 rounded-lg shadow-ef5 hvr-grow">
+            <img src="{% static 'home/assets/img/products/daychuyen1.jpg' %}" alt="Kim cương 4" class="w-full h-40 object-cover">
+            <h3 class="mt-2 text-lg font-bold">Dây cổ Kim cương Vàng Trắng</h3>
+            <p class="text-red-500 font-semibold">715.647.000₫</p>
+            <button data-product="1" data-action="add" class="update-cart add-cart">Thêm vào giỏ</button>
+            <button class="favorite"><i class="fa-regular fa-heart"></i></button>
+        </a>
+    </div>
+</section>
+<section class="bg-white py-12 roboto-light">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl roboto-bold mb-12">Quy trình gia công kim cương</h2>
+        <div class="flex flex-wrap justify-center gap-6">
+            <div class="w-64 text-center">
+                <img src="{% static 'home/assets/img/elements/quytrinh1.jpg' %}" alt="Bước 1" class="rounded-full w-32 h-32 mx-auto">
+                <h3 class="font-bold mt-2">Bước 1: Khai thác</h3>
+            </div>
+            <div class="w-64 text-center">
+                <img src="{% static 'home/assets/img/elements/quytrinh2.jpg' %}" alt="Bước 2" class="rounded-full w-32 h-32 mx-auto">
+                <h3 class="font-bold mt-2">Bước 2: Cắt & Mài</h3>
+            </div>
+            <div class="w-64 text-center">
+                <img src="{% static 'home/assets/img/elements/quytrinh3.jpg' %}" alt="Bước 3" class="rounded-full w-32 h-32 mx-auto">
+                <h3 class="font-bold mt-2">Bước 3: Đánh bóng</h3>
+            </div>
+            <div class="w-64 text-center">
+                <img src="{% static 'home/assets/img/elements/quytrinh4.jpg' %}" alt="Bước 4" class="rounded-full w-32 h-32 mx-auto">
+                <h3 class="font-bold mt-2">Bước 4: Hoàn thiện</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container mx-auto px-4 py-12 roboto-light">
+    <h2 class="text-3xl roboto-bold text-center mb-8">Tin tức mới nhất</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="shadow-ef5 p-4 hvr-grow">
+            <img src="{% static 'home/assets/img/news/tintuc1.jpg' %}" alt="Tin 1" class="w-full h-40 object-cover">
+            <h3 class="mt-2 text-lg font-bold">Xu hướng kim cương 2025</h3>
+            <p class="text-gray-600 mt-2">Cập nhật xu hướng kim cương mới nhất năm 2025...</p>
+        </div>
+        <div class="shadow-ef5 p-4 hvr-grow">
+            <img src="{% static 'home/assets/img/news/tintuc2.jpg' %}" alt="Tin 2" class="w-full h-40 object-cover">
+            <h3 class="mt-2 text-lg font-bold">Kim cương tự nhiên & nhân tạo</h3>
+            <p class="text-gray-600 mt-2">Sự khác biệt giữa kim cương tự nhiên và nhân tạo...</p>
+        </div>
+        <div class="shadow-ef5 p-4 hvr-grow">
+            <img src="{% static 'home/assets/img/news/tintuc3.jpg' %}" alt="Tin 3" class="w-full h-40 object-cover">
+            <h3 class="mt-2 text-lg font-bold">Cách chọn kim cương</h3>
+            <p class="text-gray-600 mt-2">Những tiêu chí quan trọng để chọn một viên kim cương...</p>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,38 @@
+{% extends "ms-page.html" %}
+
+{% block navbar%}
+  {% include 'includes-page/nav-bar.html' %}
+{% endblock%}
+
+{% block content %}
+
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'home/assets/css/page-style.css' %}">
+    <link rel="stylesheet" href="{% static 'home/assets/css/profile.css' %}">
+</head>
+<div class="form-user min-h-screen roboto-light">
+    <h1 class="text-2xl my-4 roboto-bold">Đăng ký</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="{{ form.username.id_for_label }}">Tên đăng nhập:</label>
+        {{ form.username }}
+    
+        <label for="{{ form.email.id_for_label }}">Email:</label>
+        {{ form.email }}
+    
+        <label for="{{ form.password1.id_for_label }}">Mật khẩu:</label>
+        {{ form.password1 }}
+    
+        <label for="{{ form.password2.id_for_label }}">Nhập lại mật khẩu:</label>
+        {{ form.password2 }}
+        <input class="px-8 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 hover:cursor-pointer" type="submit" value="Đăng ký">
+    </form>
+    <p class="py-4">Bạn đã có tài khoản? <a class="text-blue-500 underline" href="{% url 'account_login' %}">Đăng nhập</a></p>
+</div>
+
+{% endblock content %}
+{% block footer%}
+{% include 'includes-page/footer.html' %}
+{% endblock%}
