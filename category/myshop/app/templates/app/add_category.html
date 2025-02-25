@@ -1,0 +1,13 @@
+{% extends 'app/base.html' %}
+
+{% block title %}Thêm Danh Mục{% endblock %}
+
+{% block content %}
+    <h2 class="text-success">➕ Thêm Danh Mục</h2>
+    <form method="post" class="p-3 border rounded bg-light">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Thêm</button>
+        <a href="{% url 'category_list' %}" class="btn btn-secondary">Quay Lại</a>
+    </form>
+{% endblock %}

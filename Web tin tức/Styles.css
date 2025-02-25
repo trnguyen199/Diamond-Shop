@@ -1,0 +1,155 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #17202a;
+    padding: 15px 20px;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color:white;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #FFD700;
+}
+
+.bot-logo
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #212f3d;
+    padding: 15px 20px;
+    color: white;
+}
+.mid-logo
+{
+    margin-right: 70px;
+}
+
+.search-box {
+    display: flex;
+    background: #333;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-right: 30px;
+}
+
+.search-box input {
+    border: none;
+    padding: 5px;
+    background: none;
+    color: #fff;
+}
+
+.Text-box p
+{
+    font-size: 18px;
+    text-align: left;
+    margin-right: 300px;
+    margin-left:300px;
+    color:#333333;
+}
+
+.Text-box h3
+{
+    font-size: 24px;
+    text-align: left;
+    margin-right: 300px;
+    margin-left:300px;
+    color:#333333;
+}
+
+.Text-box img
+{
+    -ms-flex-item-align: center;
+    margin-right: 400px;
+    margin-left:400px;
+    margin-top: 20px;
+    margin-bottom:20px;
+}
+.Text-box h2{
+    font-size: 30px;
+    text-align: center;
+    color:#333333;
+}
+.Text-box hr
+{
+    margin-right: 300px;
+    margin-left:300px;
+}
+
+.Text-box
+{
+    background-color: #f5f5f5;
+}
+footer {
+    background: #17202a;
+    color: white;
+    padding: 30px 0;
+    font-family: Arial, sans-serif;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+.footer-section {
+    flex: 1;
+    padding: 20px;
+}
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+.footer-section ul li a:hover {
+    color: #b8860b;
+  }
+.contact p {
+    margin: 5px 0;
+  }
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 15px;
+    font-size: 14px;
+  }

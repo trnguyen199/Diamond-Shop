@@ -1,0 +1,12 @@
+{% extends 'app/base.html' %}
+
+{% block title %}Cập Nhật Danh Mục{% endblock %}
+
+{% block content %}
+    <h2>Cập Nhật Danh Mục</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-warning">Cập Nhật</button>
+    </form>
+{% endblock %}
